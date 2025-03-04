@@ -17,7 +17,7 @@ model User {
   id            String  @id @default(auto()) @map("_id") @db.ObjectId
   clerkId       String  @unique
   role          String  @default("user")
-  categoryStats CategoryStats[]
+  categoryStats CategoryStat[]
 }
 
 model Category{
@@ -26,7 +26,7 @@ model Category{
   description   String?
   image         String?
   quizzes       Quiz[]
-  categoryStats CategoryStats[]
+  categoryStats CategoryStat[]
 }
 
 model Quiz{
@@ -56,4 +56,16 @@ model Option{
   question      Question  @relation(fields:[questionId], references:[id], onDelete: Cascade)
 }
 
-m
+model CategoryStat {
+  id            String   @id @default(auto()) @map("_id") @db.ObjectId
+  userId        String   @db.ObjectId
+  user          User     @relation(fields: [userId], references: [id])
+  categoryId    String   @db.ObjectId
+  category      Category @relation(fields: [categoryId], references: [id])
+  attempts      Int      @default(0)
+  completed     Int      @default(0)
+  averageScore  Float?
+  lastAttempt   DateTime?
+
+  @@unique([userId, categoryId])
+}

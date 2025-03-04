@@ -3,6 +3,7 @@ import "./globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
 import Header from "@/components/Header";
 import {Nunito} from "next/font/google";
+import ContextProvider from "@/providers/ContextProvider";
 
 
 
@@ -32,8 +33,8 @@ export default function RootLayout({
        referrerPolicy="no-referrer" />
       </head>
       <ClerkProvider>
-        <body
-          className={`${nunito.className} antialiased`}
+        <ContextProvider></ContextProvider>
+        <body className={`${nunito.className} antialiased`}
         >
           <Header/>
           <main className="py-8 mx-[15rem] xl:mx-[25rem] h-full">{children}</main>
