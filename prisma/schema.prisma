@@ -9,6 +9,51 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
+  provider = "mongodb"
   url      = env("DATABASE_URL")
 }
+
+model User {
+  id            String  @id @default(auto()) @map("_id") @db.ObjectId
+  clerkId       String  @unique
+  role          String  @default("user")
+  categoryStats CategoryStats[]
+}
+
+model Category{
+  id            String  @id @default(auto()) @map("_id") @db.ObjectId
+  name          String
+  description   String?
+  image         String?
+  quizzes       Quiz[]
+  categoryStats CategoryStats[]
+}
+
+model Quiz{
+  id            String  @id @default(auto()) @map("_id") @db.ObjectId
+  title         String
+  description   String?
+  image         String?
+  categoryId    String    @db.ObjectId
+  category      Category  @relation(fields : [categoryId], references: [id])
+  questions     Question[]
+}
+
+model Question{
+  id            String  @id @default(auto()) @map("_id") @db.ObjectId
+  text          String
+  quizId        String    @db.ObjectId
+  difficulty    String?
+  quiz          Quiz      @relation(fields: [quizId], references:[id], onDelete: Cascade)
+  option        Option[]
+}
+
+model Option{
+  id            String  @id @default(auto()) @map("_id") @db.ObjectId
+  text          String
+  isCorrect     Boolean
+  questionId    String    @db.ObjectId
+  question      Question  @relation(fields:[questionId], references:[id], onDelete: Cascade)
+}
+
+m
