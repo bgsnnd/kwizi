@@ -1,3 +1,5 @@
+"use client"
+
 import React from "react";
 import useCategories from "./useCategories";
 
@@ -8,16 +10,17 @@ export const GlobalContextProvider = ({children}) => {
 
    console.log("GlobalContextProvider", categories)
     return(
-        <GlobalContext.Provider value={{
-            loading,
-            categories,
-        }}
+        <GlobalContext.Provider 
+            value={{
+                loading,
+                categories,
+            }}
         >
             {children}
         </GlobalContext.Provider>
-    )
-}
-
-    export default useGlobalContext = () =>{
-        return React.useContext(GlobalContext);
-    };
+    );
+    
+};
+export const useGlobalContext = () => {
+    return React.useContext(GlobalContext);
+};
