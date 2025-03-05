@@ -8,12 +8,25 @@ const GlobalContext = React.createContext();
 export const GlobalContextProvider = ({children}) => {
    const {loading, categories} = useCategories();
 
-   console.log("GlobalContextProvider", categories)
+   const [quizSetup, setQuizSetup] = React.useState({
+    questionCount:1,
+    category: null,
+    difficulty: null,
+   });
+   const [selectedQuiz, setSelectedQuiz] = React.useState(null);
+   const [quizResponses, setQuizResponses] = React.useState([]);
+
     return(
         <GlobalContext.Provider 
             value={{
                 loading,
                 categories,
+                quizSetup,
+                setQuizSetup,
+                selectedQuiz,
+                setSelectedQuiz,
+                quizResponses,
+                setQuizResponses,
             }}
         >
             {children}

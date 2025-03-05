@@ -4,6 +4,7 @@ import React from 'react'
 import Image from 'next/image'
 import { dots } from '@/utils/Icons'
 import { useRouter } from 'next/navigation'
+import { useGlobalContext } from '@/context/globalContext'
 
 interface Props {
     quiz: IQuiz
@@ -13,7 +14,11 @@ interface Props {
 function QuizCard({quiz}: Props) {
 
     const router = useRouter();
+
+    const {setSelectedQuiz} = useGlobalContext();
+
     const handleClick = () => {
+        setSelectedQuiz(quiz);
         router.push(`/quiz/setup/${quiz.id}`);
     };
 

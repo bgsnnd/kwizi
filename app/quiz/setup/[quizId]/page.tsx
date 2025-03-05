@@ -1,11 +1,22 @@
+"use client"
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
+import { useGlobalContext } from '@/context/globalContext'
 import { play } from '@/utils/Icons'
-import React from 'react'
+import { useRouter } from 'next/navigation'
+import React, { useEffect } from 'react'
 
 function page(){
+    const router = useRouter();
+    const {quizSetup, setQuizSetup, selectedQuiz} = useGlobalContext;
+    useEffect(()=> {
+        if(!selectedQuiz){
+            router.push("/");
+        }
+    }, [selectedQuiz,router])
+
     return(
         <div>
             <div className="py-[6rem] w-[50%] fixed left-1/2 top-[45%] translate-x-[-50%] translate-y-[-50%] p-6 border-2 rounded-xl shadow-[0_.5rem_0_0_ rgba(0,0,0,0.1)] mx-auto ">
