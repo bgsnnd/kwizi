@@ -1,5 +1,5 @@
 /* eslint-disable no-var */
-import { PrismaClient } from "@prisma/client/extension";
+const { PrismaClient } = require("@prisma/client");
 
 let prisma: PrismaClient;
 

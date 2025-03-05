@@ -9,7 +9,6 @@ export default function Home() {
   return (
     <div>
       <h1 className="text-4xl font-bold">Quiz Catelog</h1>
-
       <div className="mt-6 grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-6">
         {categories.map((category: ICategory) => (
           <HomeCard key={category.id} category={category} />

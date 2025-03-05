@@ -35,7 +35,7 @@ model Quiz{
   description   String?
   image         String?
   categoryId    String    @db.ObjectId
-  category      Category  @relation(fields : [categoryId], references: [id])
+  category      Category?  @relation(fields : [categoryId], references: [id])
   questions     Question[]
 }
 
@@ -44,7 +44,7 @@ model Question{
   text          String
   quizId        String    @db.ObjectId
   difficulty    String?
-  quiz          Quiz      @relation(fields: [quizId], references:[id], onDelete: Cascade)
+  quiz          Quiz?      @relation(fields: [quizId], references:[id], onDelete: Cascade)
   option        Option[]
 }
 
