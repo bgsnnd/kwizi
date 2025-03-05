@@ -10,12 +10,25 @@ import React, { useEffect } from 'react'
 
 function page(){
     const router = useRouter();
-    const {quizSetup, setQuizSetup, selectedQuiz} = useGlobalContext;
+    const {quizSetup, setQuizSetup, selectedQuiz} = useGlobalContext();
     useEffect(()=> {
         if(!selectedQuiz){
             router.push("/");
         }
-    }, [selectedQuiz,router])
+    }, [selectedQuiz,router]);
+
+    const handleQuestionChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const value = parseInt(e.target.value,10);
+        const maxQuestions = selectedQuiz?.questions.length || 1;
+
+        const newCount = isNaN(value) || value < 1 ? 1 : Math.min(value, maxQuestions);
+
+        setQuizSetup((prev:{})=> ({...prev, questionCount: newCount }));
+    };
+
+    const handleDifficultyChange = (difficulty:string) => {
+        setQuizSetup((prev:{})=>({...prev, difficulty}));
+    }
 
     return(
         <div>
@@ -24,7 +37,15 @@ function page(){
                 <div className="space-y-6">
                     <div className="space-y-2">
                         <Label htmlFor="questionCount">Number of Questions</Label>
-                        <Input type="number" min={1} id="questionCount" />
+                        <Input 
+                            type="number" 
+                            min={1} 
+                            id="questionCount" 
+                            value={quizSetup?.questionCount} 
+                            onChange={handleDifficultyChange}
+                            max={selectedQuiz?.questions.length}
+
+                        />
                     </div>
                     <div className="space-y-2">
                         <Label htmlFor="category" className="text-lg" >Category</Label>
