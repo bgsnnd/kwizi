@@ -5,8 +5,10 @@ import { Label } from '@/components/ui/label'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import { useGlobalContext } from '@/context/globalContext'
 import { play } from '@/utils/Icons'
+import axios from 'axios'
 import { useRouter } from 'next/navigation'
 import React, { useEffect } from 'react'
+import toast from 'react-hot-toast'
 
 function page(){
     const router = useRouter();
@@ -28,7 +30,39 @@ function page(){
 
     const handleDifficultyChange = (difficulty:string) => {
         setQuizSetup((prev:{})=>({...prev, difficulty}));
+
+        console.log("Difficulty:", difficulty);
+    };
+
+    const startQuiz = async () => {
+        const selectedQuestions = selectedQuiz?.questions.slice(0,
+            quizSetup?.questionCount
+        ).filter((q:{difficulty:string})=>{
+            return (quizSetup?.difficulty || 
+            q.difficulty?.toLowerCase() ===
+            selectedQuiz?.difficulty?.toLowerCase()
+            );
+        });
+        if(selectedQuestions.length > 0){
+            //update db for quiz attempt start
+
+            try{
+                await axios.post("/api/user/quiz/start",{
+                    categoryId : selectedQuiz?.categoryId,
+                    quizId: selectedQuiz?.id,
+                })
+
+            }catch(error){
+                console.log("Error starting quiz:", error)
+            }
+
+            //push to the quiz page
+            router.push("/quiz");
+        }else{
+            toast.error("No questions found for the selected criteria");
+        }
     }
+
 
     return(
         <div>
@@ -65,7 +99,9 @@ function page(){
                         <Label htmlFor="difficulty" className="text-lg" >
                             Difficulty
                         </Label>
-                        <Select defaultValue="unspecified">
+                        <Select defaultValue="unspecified"
+                            onValueChange={(value)=> handleDifficultyChange(value)}
+                        >
                             <SelectTrigger id="difficulty">
                                 <SelectValue placeholder="Select a difficulty"/>
                             </SelectTrigger>
@@ -81,7 +117,7 @@ function page(){
             </div>
 
             <div className=" w-full py-[4rem] flex items-center justify-center fixed bottom-0 left-0 bg-white border-t-2">
-                <Button variant={"blue"} className="px-10 py-6 font-bold text-white text-xl rounded-xl">
+                <Button variant={"blue"} className="px-10 py-6 font-bold text-white text-xl rounded-xl "onClick={startQuiz}>
                     <span className="flex items-center gap-2">{play} Start</span>
                 </Button>
             </div>

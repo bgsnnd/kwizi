@@ -4,6 +4,7 @@ import { ClerkProvider } from "@clerk/nextjs";
 import Header from "@/components/Header";
 import {Nunito} from "next/font/google";
 import ContextProvider from "@/providers/ContextProvider";
+import {Toaster} from "react-hot-toast";
 
 
 
@@ -34,8 +35,8 @@ export default function RootLayout({
       </head>
       <ClerkProvider>
         <ContextProvider>
-        <body className={`${nunito.className} antialiased`}
-        >
+        <body className={`${nunito.className} antialiased`}>
+          <Toaster position="top-center"/>
           <Header/>
           <main className="py-8 mx-[15rem] xl:mx-[25rem] h-full">{children}</main>
         </body>
