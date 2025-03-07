@@ -64,8 +64,9 @@ model CategoryStat {
   category      Category @relation(fields: [categoryId], references: [id])
   attempts      Int      @default(0)
   completed     Int      @default(0)
-  averageScore  Float?
-  lastAttempt   DateTime?
+  averageScore  Float    @default(0.0)
+  lastAttempt   DateTime @default(now())
 
   @@unique([userId, categoryId])
 }
+

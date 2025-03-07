@@ -1,7 +1,7 @@
 "use client";
 import { Button } from '@/components/ui/button';
 import { useGlobalContext } from '@/context/globalContext';
-import { IOption, IQuestion } from '@/types/types';
+import { IOption, IQuestion, IResponse } from '@/types/types';
 import { flag, next } from '@/utils/Icons';
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
@@ -31,7 +31,7 @@ function page() {
         );
       })
       .slice(0, quizSetup?.questionCount)
-      .map((q) => ({...q, options: q.option, // Mengubah nama "option" menjadi "options"
+      .map((q: { option: any; }) => ({...q, options: q.option, // Mengubah nama "option" menjadi "options"
       }));
       setShuffledQuestions(shuffleArray([...filteredQuestions]));
     }, [selectedQuiz,quizSetup]);
@@ -100,27 +100,30 @@ function page() {
       }
     };
 
-    const handleFinishQuiz = async() => {
+    const handleFinishQuiz = async () => {
       setQuizResponses(responses);
+  
       const score = responses.filter((res) => res.isCorrect).length;
+  
       try {
         const res = await axios.post("/api/user/quiz/finish", {
           categoryId: selectedQuiz.categoryId,
           quizId: selectedQuiz.id,
           score,
-          responses, 
+          responses,
         });
+  
         console.log("Quiz finished:", res.data);
       } catch (error) {
-        console.log("Error finishing quiz", error);
+        console.log("Error finishing quiz:", error);
       }
-
+  
       setQuizSetup({
         questionCount: 1,
         category: null,
         difficulty: null,
       });
-
+  
       router.push("/results");
     };
 

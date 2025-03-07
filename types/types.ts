@@ -33,4 +33,16 @@ interface IResponse{
     isCorrect : boolean;
 }
 
-export type { ICategory, IQuiz, IQuestion, IOption, IResponse }
+interface ICategoryStats{
+    attempts : number,
+    averageScore: number | null,
+    categoryId : string,
+    completed : number,
+    id: string,
+    lastAttempt: Date,
+    userId: string,
+    category: ICategory;
+
+}
+
+export type { ICategory, IQuiz, IQuestion, IOption, IResponse, ICategoryStats }

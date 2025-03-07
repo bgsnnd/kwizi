@@ -37,6 +37,8 @@
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
+    --green-400:#4ade80;
+    --blue-400:#60a5fa;
   }
   .dark {
     --background: 240 10% 3.9%;
@@ -82,7 +84,7 @@
   width: fit-content;
   font-weight: bold;
   font-family: monospace;
-  font-size: 30px;
+  font-size: 50px;
   clip-path: inset(0 3ch 0 0);
   animation: l4 1s steps(4) infinite;
 }
