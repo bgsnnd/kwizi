@@ -1,7 +1,7 @@
 const chemistryQuestions = [
   {
     text: "What is the most abundant gas in Earth's atmosphere?",
-    options: [
+    option: [
       { text: "Nitrogen", isCorrect: true },
       { text: "Oxygen", isCorrect: false },
       { text: "Carbon Dioxide", isCorrect: false },
@@ -10,7 +10,7 @@ const chemistryQuestions = [
   },
   {
     text: "What is the chemical formula for water?",
-    options: [
+    option: [
       { text: "H2O", isCorrect: true },
       { text: "O2", isCorrect: false },
       { text: "CO2", isCorrect: false },
@@ -19,7 +19,7 @@ const chemistryQuestions = [
   },
   {
     text: "What is the pH of a neutral solution?",
-    options: [
+    option: [
       { text: "7", isCorrect: true },
       { text: "0", isCorrect: false },
       { text: "14", isCorrect: false },
@@ -28,7 +28,7 @@ const chemistryQuestions = [
   },
   {
     text: "What is the molar mass of carbon dioxide (CO2)?",
-    options: [
+    option: [
       { text: "44 g/mol", isCorrect: true },
       { text: "28 g/mol", isCorrect: false },
       { text: "18 g/mol", isCorrect: false },
@@ -37,7 +37,7 @@ const chemistryQuestions = [
   },
   {
     text: "Which element is represented by the symbol 'Na'?",
-    options: [
+    option: [
       { text: "Sodium", isCorrect: true },
       { text: "Nitrogen", isCorrect: false },
       { text: "Neon", isCorrect: false },
@@ -46,7 +46,7 @@ const chemistryQuestions = [
   },
   {
     text: "What type of bond is formed between two water molecules?",
-    options: [
+    option: [
       { text: "Hydrogen bond", isCorrect: true },
       { text: "Ionic bond", isCorrect: false },
       { text: "Covalent bond", isCorrect: false },
@@ -55,7 +55,7 @@ const chemistryQuestions = [
   },
   {
     text: "What is the atomic number of oxygen?",
-    options: [
+    option: [
       { text: "8", isCorrect: true },
       { text: "6", isCorrect: false },
       { text: "7", isCorrect: false },
@@ -64,7 +64,7 @@ const chemistryQuestions = [
   },
   {
     text: "Which gas is commonly used in balloons because it is lighter than air?",
-    options: [
+    option: [
       { text: "Helium", isCorrect: true },
       { text: "Hydrogen", isCorrect: false },
       { text: "Nitrogen", isCorrect: false },
@@ -73,7 +73,7 @@ const chemistryQuestions = [
   },
   {
     text: "What is the main component of natural gas?",
-    options: [
+    option: [
       { text: "Methane", isCorrect: true },
       { text: "Propane", isCorrect: false },
       { text: "Butane", isCorrect: false },
@@ -82,7 +82,7 @@ const chemistryQuestions = [
   },
   {
     text: "Which acid is found in vinegar?",
-    options: [
+    option: [
       { text: "Acetic acid", isCorrect: true },
       { text: "Citric acid", isCorrect: false },
       { text: "Lactic acid", isCorrect: false },
@@ -91,7 +91,7 @@ const chemistryQuestions = [
   },
   {
     text: "What is the process of converting a liquid to a gas called?",
-    options: [
+    option: [
       { text: "Evaporation", isCorrect: true },
       { text: "Condensation", isCorrect: false },
       { text: "Sublimation", isCorrect: false },
@@ -100,7 +100,7 @@ const chemistryQuestions = [
   },
   {
     text: "Which of the following is an alkali metal?",
-    options: [
+    option: [
       { text: "Potassium", isCorrect: true },
       { text: "Calcium", isCorrect: false },
       { text: "Iron", isCorrect: false },
@@ -109,7 +109,7 @@ const chemistryQuestions = [
   },
   {
     text: "What is the name of the process in which plants produce glucose?",
-    options: [
+    option: [
       { text: "Photosynthesis", isCorrect: true },
       { text: "Respiration", isCorrect: false },
       { text: "Fermentation", isCorrect: false },
@@ -118,7 +118,7 @@ const chemistryQuestions = [
   },
   {
     text: "Which compound is known as the universal solvent?",
-    options: [
+    option: [
       { text: "Water", isCorrect: true },
       { text: "Ethanol", isCorrect: false },
       { text: "Acetone", isCorrect: false },
@@ -127,7 +127,7 @@ const chemistryQuestions = [
   },
   {
     text: "What is the chemical formula for table salt?",
-    options: [
+    option: [
       { text: "NaCl", isCorrect: true },
       { text: "KCl", isCorrect: false },
       { text: "CaCl2", isCorrect: false },

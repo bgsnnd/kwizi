@@ -1,7 +1,7 @@
 const csQuestions = [
   {
     text: "What does CPU stand for?",
-    options: [
+    option: [
       { text: "Central Processing Unit", isCorrect: true },
       { text: "Central Programming Unit", isCorrect: false },
       { text: "Central Process Unit", isCorrect: false },
@@ -10,7 +10,7 @@ const csQuestions = [
   },
   {
     text: "What is the main purpose of an operating system?",
-    options: [
+    option: [
       { text: "To manage computer hardware and software", isCorrect: true },
       { text: "To run antivirus software", isCorrect: false },
       { text: "To process user data", isCorrect: false },
@@ -19,7 +19,7 @@ const csQuestions = [
   },
   {
     text: "What does HTML stand for?",
-    options: [
+    option: [
       { text: "HyperText Markup Language", isCorrect: true },
       { text: "HyperText Machine Language", isCorrect: false },
       { text: "HyperText Modern Language", isCorrect: false },
@@ -28,7 +28,7 @@ const csQuestions = [
   },
   {
     text: "Which data structure uses LIFO (Last In, First Out)?",
-    options: [
+    option: [
       { text: "Stack", isCorrect: true },
       { text: "Queue", isCorrect: false },
       { text: "Array", isCorrect: false },
@@ -37,7 +37,7 @@ const csQuestions = [
   },
   {
     text: "What is a primary key in a database?",
-    options: [
+    option: [
       { text: "A unique identifier for a record", isCorrect: true },
       { text: "A foreign key for table relationships", isCorrect: false },
       { text: "A column to store large data", isCorrect: false },
@@ -46,7 +46,7 @@ const csQuestions = [
   },
   {
     text: "Which programming language is primarily used for Android app development?",
-    options: [
+    option: [
       { text: "Java", isCorrect: true },
       { text: "Python", isCorrect: false },
       { text: "C#", isCorrect: false },
@@ -55,7 +55,7 @@ const csQuestions = [
   },
   {
     text: "What is the binary representation of the decimal number 5?",
-    options: [
+    option: [
       { text: "101", isCorrect: true },
       { text: "110", isCorrect: false },
       { text: "111", isCorrect: false },
@@ -64,7 +64,7 @@ const csQuestions = [
   },
   {
     text: "Which sorting algorithm is the fastest in the average case?",
-    options: [
+    option: [
       { text: "Merge Sort", isCorrect: false },
       { text: "Quick Sort", isCorrect: true },
       { text: "Bubble Sort", isCorrect: false },
@@ -73,7 +73,7 @@ const csQuestions = [
   },
   {
     text: "What is the purpose of an IP address?",
-    options: [
+    option: [
       { text: "To uniquely identify a device on a network", isCorrect: true },
       { text: "To store user passwords", isCorrect: false },
       { text: "To encrypt network traffic", isCorrect: false },
@@ -82,7 +82,7 @@ const csQuestions = [
   },
   {
     text: "Which of the following is a NoSQL database?",
-    options: [
+    option: [
       { text: "MongoDB", isCorrect: true },
       { text: "MySQL", isCorrect: false },
       { text: "PostgreSQL", isCorrect: false },

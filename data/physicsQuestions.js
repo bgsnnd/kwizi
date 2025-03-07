@@ -1,7 +1,7 @@
 const physicsQuestions = [
   {
     text: "What is Newton's second law of motion?",
-    options: [
+    option: [
       { text: "Force equals mass times acceleration", isCorrect: true },
       { text: "An object in motion stays in motion", isCorrect: false },
       {
@@ -13,7 +13,7 @@ const physicsQuestions = [
   },
   {
     text: "What is the SI unit of force?",
-    options: [
+    option: [
       { text: "Newton", isCorrect: true },
       { text: "Joule", isCorrect: false },
       { text: "Pascal", isCorrect: false },
@@ -22,7 +22,7 @@ const physicsQuestions = [
   },
   {
     text: "What does E=mc^2 represent?",
-    options: [
+    option: [
       { text: "Energy-mass equivalence", isCorrect: true },
       { text: "Kinetic energy formula", isCorrect: false },
       { text: "Force-mass relationship", isCorrect: false },
@@ -31,7 +31,7 @@ const physicsQuestions = [
   },
   {
     text: "What is the universal gravitational constant (G)?",
-    options: [
+    option: [
       { text: "6.674 × 10^-11 N·m²/kg²", isCorrect: true },
       { text: "9.8 m/s²", isCorrect: false },
       { text: "1.6 × 10^-19 C", isCorrect: false },
@@ -40,7 +40,7 @@ const physicsQuestions = [
   },
   {
     text: "What is the formula for kinetic energy?",
-    options: [
+    option: [
       { text: "1/2 mv²", isCorrect: true },
       { text: "mgh", isCorrect: false },
       { text: "mv", isCorrect: false },
@@ -49,7 +49,7 @@ const physicsQuestions = [
   },
   {
     text: "What is the acceleration due to gravity on Earth?",
-    options: [
+    option: [
       { text: "9.8 m/s²", isCorrect: true },
       { text: "6.674 × 10^-11 m/s²", isCorrect: false },
       { text: "3.0 × 10^8 m/s²", isCorrect: false },
@@ -58,7 +58,7 @@ const physicsQuestions = [
   },
   {
     text: "Which law states that the pressure of a gas is inversely proportional to its volume?",
-    options: [
+    option: [
       { text: "Boyle's Law", isCorrect: true },
       { text: "Charles's Law", isCorrect: false },
       { text: "Avogadro's Law", isCorrect: false },
@@ -67,7 +67,7 @@ const physicsQuestions = [
   },
   {
     text: "What is the SI unit of power?",
-    options: [
+    option: [
       { text: "Watt", isCorrect: true },
       { text: "Joule", isCorrect: false },
       { text: "Newton", isCorrect: false },
@@ -76,7 +76,7 @@ const physicsQuestions = [
   },
   {
     text: "What is the work done when a 10 N force moves an object 5 m in the direction of the force?",
-    options: [
+    option: [
       { text: "50 J", isCorrect: true },
       { text: "5 J", isCorrect: false },
       { text: "10 J", isCorrect: false },
@@ -85,7 +85,7 @@ const physicsQuestions = [
   },
   {
     text: "What is the speed of light in a vacuum?",
-    options: [
+    option: [
       { text: "3.0 × 10^8 m/s", isCorrect: true },
       { text: "9.8 m/s", isCorrect: false },
       { text: "1.6 × 10^-19 m/s", isCorrect: false },
@@ -94,7 +94,7 @@ const physicsQuestions = [
   },
   {
     text: "What type of wave is sound?",
-    options: [
+    option: [
       { text: "Longitudinal", isCorrect: true },
       { text: "Transverse", isCorrect: false },
       { text: "Electromagnetic", isCorrect: false },
@@ -103,7 +103,7 @@ const physicsQuestions = [
   },
   {
     text: "What is the formula for Ohm's Law?",
-    options: [
+    option: [
       { text: "V = IR", isCorrect: true },
       { text: "P = VI", isCorrect: false },
       { text: "I = V/R", isCorrect: false },
@@ -112,7 +112,7 @@ const physicsQuestions = [
   },
   {
     text: "What is the SI unit of electric charge?",
-    options: [
+    option: [
       { text: "Coulomb", isCorrect: true },
       { text: "Ampere", isCorrect: false },
       { text: "Volt", isCorrect: false },
@@ -121,7 +121,7 @@ const physicsQuestions = [
   },
   {
     text: "What is the energy of a photon with a frequency of 5 × 10^14 Hz? (h = 6.63 × 10^-34 J·s)",
-    options: [
+    option: [
       { text: "3.315 × 10^-19 J", isCorrect: true },
       { text: "6.63 × 10^-19 J", isCorrect: false },
       { text: "1.327 × 10^-18 J", isCorrect: false },
@@ -130,7 +130,7 @@ const physicsQuestions = [
   },
   {
     text: "What is the period of a wave with a frequency of 10 Hz?",
-    options: [
+    option: [
       { text: "0.1 s", isCorrect: true },
       { text: "10 s", isCorrect: false },
       { text: "0.01 s", isCorrect: false },

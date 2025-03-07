@@ -35,9 +35,9 @@ function page(){
     };
 
     const startQuiz = async () => {
-        const selectedQuestions = selectedQuiz?.questions.slice(0,
-            quizSetup?.questionCount
-        ).filter((q:{difficulty:string})=>{
+        const selectedQuestions = selectedQuiz?.questions
+            .slice(0,quizSetup?.questionCount)
+            .filter((q:{difficulty:string}) => {
             return (quizSetup?.difficulty || 
             q.difficulty?.toLowerCase() ===
             selectedQuiz?.difficulty?.toLowerCase()
@@ -50,7 +50,7 @@ function page(){
                 await axios.post("/api/user/quiz/start",{
                     categoryId : selectedQuiz?.categoryId,
                     quizId: selectedQuiz?.id,
-                })
+                });
 
             }catch(error){
                 console.log("Error starting quiz:", error)
@@ -76,7 +76,7 @@ function page(){
                             min={1} 
                             id="questionCount" 
                             value={quizSetup?.questionCount} 
-                            onChange={handleDifficultyChange}
+                            onChange={handleQuestionChange}
                             max={selectedQuiz?.questions.length}
 
                         />

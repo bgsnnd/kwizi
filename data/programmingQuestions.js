@@ -1,7 +1,7 @@
 const programmingQuestions = [
   {
     text: "What does the acronym OOP stand for?",
-    options: [
+    option: [
       { text: "Object-Oriented Programming", isCorrect: true },
       { text: "Objective-Oriented Programming", isCorrect: false },
       { text: "Operation-Oriented Programming", isCorrect: false },
@@ -11,7 +11,7 @@ const programmingQuestions = [
   },
   {
     text: "Which language is primarily used for web development?",
-    options: [
+    option: [
       { text: "JavaScript", isCorrect: true },
       { text: "Python", isCorrect: false },
       { text: "C++", isCorrect: false },
@@ -21,7 +21,7 @@ const programmingQuestions = [
   },
   {
     text: "What is the output of `console.log(typeof null)` in JavaScript?",
-    options: [
+    option: [
       { text: "object", isCorrect: true },
       { text: "null", isCorrect: false },
       { text: "undefined", isCorrect: false },
@@ -31,7 +31,7 @@ const programmingQuestions = [
   },
   {
     text: "Which method is used to add an element to the end of an array in JavaScript?",
-    options: [
+    option: [
       { text: "push()", isCorrect: true },
       { text: "pop()", isCorrect: false },
       { text: "shift()", isCorrect: false },
@@ -41,7 +41,7 @@ const programmingQuestions = [
   },
   {
     text: "What is the primary purpose of the `virtual` keyword in C++?",
-    options: [
+    option: [
       { text: "To enable polymorphism", isCorrect: true },
       { text: "To declare a global variable", isCorrect: false },
       { text: "To optimize memory", isCorrect: false },
@@ -51,7 +51,7 @@ const programmingQuestions = [
   },
   {
     text: "What is the time complexity of binary search?",
-    options: [
+    option: [
       { text: "O(log n)", isCorrect: true },
       { text: "O(n)", isCorrect: false },
       { text: "O(1)", isCorrect: false },
@@ -61,7 +61,7 @@ const programmingQuestions = [
   },
   {
     text: "Which programming paradigm focuses on functions and immutability?",
-    options: [
+    option: [
       { text: "Functional Programming", isCorrect: true },
       { text: "Object-Oriented Programming", isCorrect: false },
       { text: "Procedural Programming", isCorrect: false },
@@ -71,7 +71,7 @@ const programmingQuestions = [
   },
   {
     text: "Which of the following is a valid way to declare a variable in Python?",
-    options: [
+    option: [
       { text: "variable_name = 10", isCorrect: true },
       { text: "int variable_name = 10;", isCorrect: false },
       { text: "let variable_name = 10;", isCorrect: false },
@@ -81,7 +81,7 @@ const programmingQuestions = [
   },
   {
     text: "What does the `finally` block do in a try-catch-finally structure?",
-    options: [
+    option: [
       { text: "Executes code regardless of an exception", isCorrect: true },
       { text: "Handles the exception", isCorrect: false },
       { text: "Rethrows the exception", isCorrect: false },
@@ -91,7 +91,7 @@ const programmingQuestions = [
   },
   {
     text: "Which of the following is NOT a primitive data type in Java?",
-    options: [
+    option: [
       { text: "String", isCorrect: true },
       { text: "int", isCorrect: false },
       { text: "boolean", isCorrect: false },
@@ -101,7 +101,7 @@ const programmingQuestions = [
   },
   {
     text: "Which keyword in JavaScript is used to declare a constant variable?",
-    options: [
+    option: [
       { text: "const", isCorrect: true },
       { text: "var", isCorrect: false },
       { text: "let", isCorrect: false },
@@ -111,7 +111,7 @@ const programmingQuestions = [
   },
   {
     text: "What is the default value of a reference type in Java?",
-    options: [
+    option: [
       { text: "null", isCorrect: true },
       { text: "undefined", isCorrect: false },
       { text: "0", isCorrect: false },
@@ -121,7 +121,7 @@ const programmingQuestions = [
   },
   {
     text: "Which programming language is known for its simplicity and readability?",
-    options: [
+    option: [
       { text: "Python", isCorrect: true },
       { text: "C++", isCorrect: false },
       { text: "Assembly", isCorrect: false },
@@ -131,7 +131,7 @@ const programmingQuestions = [
   },
   {
     text: "What does the `super` keyword do in Java?",
-    options: [
+    option: [
       { text: "Accesses the parent class constructor", isCorrect: true },
       { text: "Creates a new instance", isCorrect: false },
       { text: "References a subclass", isCorrect: false },
@@ -141,7 +141,7 @@ const programmingQuestions = [
   },
   {
     text: "What does the term 'closure' refer to in JavaScript?",
-    options: [
+    option: [
       {
         text: "A function retaining access to its lexical scope",
         isCorrect: true,
@@ -154,7 +154,7 @@ const programmingQuestions = [
   },
   {
     text: "Which of these is a valid way to create a new thread in Java?",
-    options: [
+    option: [
       { text: "Extend Thread class", isCorrect: true },
       { text: "Implement Runnable", isCorrect: true },
       { text: "Call thread()", isCorrect: false },
@@ -164,7 +164,7 @@ const programmingQuestions = [
   },
   {
     text: "What is the difference between `==` and `===` in JavaScript?",
-    options: [
+    option: [
       { text: "`===` checks both value and type", isCorrect: true },
       { text: "`==` checks only value", isCorrect: true },
       { text: "`==` and `===` are identical", isCorrect: false },
@@ -174,7 +174,7 @@ const programmingQuestions = [
   },
   {
     text: "Which of the following is an immutable object in Java?",
-    options: [
+    option: [
       { text: "String", isCorrect: true },
       { text: "ArrayList", isCorrect: false },
       { text: "HashMap", isCorrect: false },
@@ -184,7 +184,7 @@ const programmingQuestions = [
   },
   {
     text: "What is the output of `5 + '5'` in JavaScript?",
-    options: [
+    option: [
       { text: "55", isCorrect: true },
       { text: "10", isCorrect: false },
       { text: "NaN", isCorrect: false },
@@ -194,7 +194,7 @@ const programmingQuestions = [
   },
   {
     text: "Which of these is a strongly typed programming language?",
-    options: [
+    option: [
       { text: "Java", isCorrect: true },
       { text: "JavaScript", isCorrect: false },
       { text: "Python", isCorrect: false },

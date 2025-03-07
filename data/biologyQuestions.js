@@ -1,7 +1,7 @@
 const biologyQuestions = [
   {
     text: "What is the primary function of mitochondria in cells?",
-    options: [
+    option: [
       { text: "Energy production", isCorrect: true },
       { text: "Protein synthesis", isCorrect: false },
       { text: "Photosynthesis", isCorrect: false },
@@ -10,7 +10,7 @@ const biologyQuestions = [
   },
   {
     text: "What is the monomer unit of proteins?",
-    options: [
+    option: [
       { text: "Amino acids", isCorrect: true },
       { text: "Nucleotides", isCorrect: false },
       { text: "Monosaccharides", isCorrect: false },
@@ -19,7 +19,7 @@ const biologyQuestions = [
   },
   {
     text: "Which organ is responsible for filtering blood in humans?",
-    options: [
+    option: [
       { text: "Kidney", isCorrect: true },
       { text: "Liver", isCorrect: false },
       { text: "Heart", isCorrect: false },
@@ -28,7 +28,7 @@ const biologyQuestions = [
   },
   {
     text: "What is the primary pigment involved in photosynthesis?",
-    options: [
+    option: [
       { text: "Chlorophyll", isCorrect: true },
       { text: "Carotene", isCorrect: false },
       { text: "Xanthophyll", isCorrect: false },
@@ -37,7 +37,7 @@ const biologyQuestions = [
   },
   {
     text: "What is the process by which cells divide to form two identical daughter cells?",
-    options: [
+    option: [
       { text: "Mitosis", isCorrect: true },
       { text: "Meiosis", isCorrect: false },
       { text: "Binary fission", isCorrect: false },
@@ -46,7 +46,7 @@ const biologyQuestions = [
   },
   {
     text: "What is the molecule that carries genetic information in most living organisms?",
-    options: [
+    option: [
       { text: "DNA", isCorrect: true },
       { text: "RNA", isCorrect: false },
       { text: "Proteins", isCorrect: false },
@@ -55,7 +55,7 @@ const biologyQuestions = [
   },
   {
     text: "What is the name of the process by which plants lose water through their leaves?",
-    options: [
+    option: [
       { text: "Transpiration", isCorrect: true },
       { text: "Respiration", isCorrect: false },
       { text: "Photosynthesis", isCorrect: false },
@@ -64,7 +64,7 @@ const biologyQuestions = [
   },
   {
     text: "Which part of the brain controls coordination and balance?",
-    options: [
+    option: [
       { text: "Cerebellum", isCorrect: true },
       { text: "Cerebrum", isCorrect: false },
       { text: "Medulla oblongata", isCorrect: false },
@@ -73,7 +73,7 @@ const biologyQuestions = [
   },
   {
     text: "What is the structural and functional unit of the kidney?",
-    options: [
+    option: [
       { text: "Nephron", isCorrect: true },
       { text: "Neuron", isCorrect: false },
       { text: "Alveolus", isCorrect: false },
@@ -82,7 +82,7 @@ const biologyQuestions = [
   },
   {
     text: "Which organ in the human body produces insulin?",
-    options: [
+    option: [
       { text: "Pancreas", isCorrect: true },
       { text: "Liver", isCorrect: false },
       { text: "Kidney", isCorrect: false },
@@ -91,7 +91,7 @@ const biologyQuestions = [
   },
   {
     text: "What is the name of the bond that joins amino acids together?",
-    options: [
+    option: [
       { text: "Peptide bond", isCorrect: true },
       { text: "Ionic bond", isCorrect: false },
       { text: "Hydrogen bond", isCorrect: false },
@@ -100,7 +100,7 @@ const biologyQuestions = [
   },
   {
     text: "What is the term for organisms that produce their own food?",
-    options: [
+    option: [
       { text: "Autotrophs", isCorrect: true },
       { text: "Heterotrophs", isCorrect: false },
       { text: "Parasites", isCorrect: false },
@@ -109,7 +109,7 @@ const biologyQuestions = [
   },
   {
     text: "Which type of blood cell is primarily responsible for immunity?",
-    options: [
+    option: [
       { text: "White blood cells", isCorrect: true },
       { text: "Red blood cells", isCorrect: false },
       { text: "Platelets", isCorrect: false },
@@ -118,7 +118,7 @@ const biologyQuestions = [
   },
   {
     text: "What is the function of ribosomes in a cell?",
-    options: [
+    option: [
       { text: "Protein synthesis", isCorrect: true },
       { text: "Lipid storage", isCorrect: false },
       { text: "Energy production", isCorrect: false },
@@ -127,7 +127,7 @@ const biologyQuestions = [
   },
   {
     text: "What is the basic structural unit of all living organisms?",
-    options: [
+    option: [
       { text: "Cell", isCorrect: true },
       { text: "Tissue", isCorrect: false },
       { text: "Organ", isCorrect: false },

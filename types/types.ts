@@ -27,4 +27,10 @@ interface IOption{
     isCorrect: boolean;
 }
 
-export type { ICategory, IQuiz, IQuestion, IOption }
+interface IResponse{
+    questionId : string;
+    optionId : string;
+    isCorrect : boolean;
+}
+
+export type { ICategory, IQuiz, IQuestion, IOption, IResponse }

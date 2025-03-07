@@ -1,7 +1,7 @@
 const dsQuestions = [
   {
     text: "Which data structure uses FIFO (First In, First Out) principle?",
-    options: [
+    option: [
       { text: "Queue", isCorrect: true },
       { text: "Stack", isCorrect: false },
       { text: "Linked List", isCorrect: false },
@@ -10,7 +10,7 @@ const dsQuestions = [
   },
   {
     text: "Which data structure uses LIFO (Last In, First Out) principle?",
-    options: [
+    option: [
       { text: "Stack", isCorrect: true },
       { text: "Queue", isCorrect: false },
       { text: "Graph", isCorrect: false },
@@ -19,7 +19,7 @@ const dsQuestions = [
   },
   {
     text: "What is the time complexity of searching an element in a balanced Binary Search Tree (BST)?",
-    options: [
+    option: [
       { text: "O(log n)", isCorrect: true },
       { text: "O(n)", isCorrect: false },
       { text: "O(1)", isCorrect: false },
@@ -28,7 +28,7 @@ const dsQuestions = [
   },
   {
     text: "Which of the following is a linear data structure?",
-    options: [
+    option: [
       { text: "Array", isCorrect: true },
       { text: "Tree", isCorrect: false },
       { text: "Graph", isCorrect: false },
@@ -37,7 +37,7 @@ const dsQuestions = [
   },
   {
     text: "Which data structure can be used to implement a priority queue?",
-    options: [
+    option: [
       { text: "Heap", isCorrect: true },
       { text: "Stack", isCorrect: false },
       { text: "Linked List", isCorrect: false },
@@ -46,7 +46,7 @@ const dsQuestions = [
   },
   {
     text: "Which data structure is most suitable for implementing recursion?",
-    options: [
+    option: [
       { text: "Stack", isCorrect: true },
       { text: "Queue", isCorrect: false },
       { text: "Tree", isCorrect: false },
@@ -55,7 +55,7 @@ const dsQuestions = [
   },
   {
     text: "What is the worst-case time complexity of linear search?",
-    options: [
+    option: [
       { text: "O(n)", isCorrect: true },
       { text: "O(log n)", isCorrect: false },
       { text: "O(n log n)", isCorrect: false },
@@ -64,7 +64,7 @@ const dsQuestions = [
   },
   {
     text: "Which of the following data structures is non-linear?",
-    options: [
+    option: [
       { text: "Tree", isCorrect: true },
       { text: "Array", isCorrect: false },
       { text: "Stack", isCorrect: false },
@@ -73,7 +73,7 @@ const dsQuestions = [
   },
   {
     text: "Which data structure supports direct access by index?",
-    options: [
+    option: [
       { text: "Array", isCorrect: true },
       { text: "Linked List", isCorrect: false },
       { text: "Stack", isCorrect: false },
@@ -82,7 +82,7 @@ const dsQuestions = [
   },
   {
     text: "What is the time complexity for inserting an element at the beginning of a linked list?",
-    options: [
+    option: [
       { text: "O(1)", isCorrect: true },
       { text: "O(n)", isCorrect: false },
       { text: "O(log n)", isCorrect: false },
@@ -91,7 +91,7 @@ const dsQuestions = [
   },
   {
     text: "Which of the following operations is fastest in a hash table?",
-    options: [
+    option: [
       { text: "Search", isCorrect: true },
       { text: "Traversal", isCorrect: false },
       { text: "Sorting", isCorrect: false },
@@ -100,7 +100,7 @@ const dsQuestions = [
   },
   {
     text: "What is a binary tree where every non-leaf node has exactly two children?",
-    options: [
+    option: [
       { text: "Full Binary Tree", isCorrect: true },
       { text: "Complete Binary Tree", isCorrect: false },
       { text: "Balanced Tree", isCorrect: false },
@@ -109,7 +109,7 @@ const dsQuestions = [
   },
   {
     text: "Which of the following is NOT a data structure?",
-    options: [
+    option: [
       { text: "Loop", isCorrect: true },
       { text: "Stack", isCorrect: false },
       { text: "Queue", isCorrect: false },
@@ -118,7 +118,7 @@ const dsQuestions = [
   },
   {
     text: "Which of these data structures is best for hierarchical data?",
-    options: [
+    option: [
       { text: "Tree", isCorrect: true },
       { text: "Array", isCorrect: false },
       { text: "Stack", isCorrect: false },
@@ -127,7 +127,7 @@ const dsQuestions = [
   },
   {
     text: "Which traversal method processes nodes level by level in a tree?",
-    options: [
+    option: [
       { text: "Level Order", isCorrect: true },
       { text: "Inorder", isCorrect: false },
       { text: "Preorder", isCorrect: false },
@@ -136,7 +136,7 @@ const dsQuestions = [
   },
   {
     text: "What does a graph consist of?",
-    options: [
+    option: [
       { text: "Vertices and Edges", isCorrect: true },
       { text: "Nodes and Lists", isCorrect: false },
       { text: "Points and Lines", isCorrect: false },
@@ -145,7 +145,7 @@ const dsQuestions = [
   },
   {
     text: "What is the worst-case time complexity for searching in a hash table?",
-    options: [
+    option: [
       { text: "O(n)", isCorrect: true },
       { text: "O(1)", isCorrect: false },
       { text: "O(log n)", isCorrect: false },
@@ -154,7 +154,7 @@ const dsQuestions = [
   },
   {
     text: "Which algorithm uses a stack to traverse a graph?",
-    options: [
+    option: [
       { text: "Depth First Search (DFS)", isCorrect: true },
       { text: "Breadth First Search (BFS)", isCorrect: false },
       { text: "Dijkstra's Algorithm", isCorrect: false },
@@ -163,7 +163,7 @@ const dsQuestions = [
   },
   {
     text: "Which data structure allows constant-time lookup on average?",
-    options: [
+    option: [
       { text: "Hash Table", isCorrect: true },
       { text: "Stack", isCorrect: false },
       { text: "Queue", isCorrect: false },
@@ -172,7 +172,7 @@ const dsQuestions = [
   },
   {
     text: "What is the time complexity of accessing an element in an array by index?",
-    options: [
+    option: [
       { text: "O(1)", isCorrect: true },
       { text: "O(log n)", isCorrect: false },
       { text: "O(n)", isCorrect: false },
@@ -181,7 +181,7 @@ const dsQuestions = [
   },
   {
     text: "Which data structure is used for implementing undo operations?",
-    options: [
+    option: [
       { text: "Stack", isCorrect: true },
       { text: "Queue", isCorrect: false },
       { text: "Heap", isCorrect: false },
@@ -190,7 +190,7 @@ const dsQuestions = [
   },
   {
     text: "Which traversal method visits the root node last?",
-    options: [
+    option: [
       { text: "Postorder", isCorrect: true },
       { text: "Inorder", isCorrect: false },
       { text: "Preorder", isCorrect: false },
@@ -199,7 +199,7 @@ const dsQuestions = [
   },
   {
     text: "Which data structure is ideal for implementing recursion?",
-    options: [
+    option: [
       { text: "Stack", isCorrect: true },
       { text: "Queue", isCorrect: false },
       { text: "Graph", isCorrect: false },
@@ -208,7 +208,7 @@ const dsQuestions = [
   },
   {
     text: "Which type of binary tree has all levels completely filled except possibly the last?",
-    options: [
+    option: [
       { text: "Complete Binary Tree", isCorrect: true },
       { text: "Full Binary Tree", isCorrect: false },
       { text: "Balanced Binary Tree", isCorrect: false },
@@ -217,7 +217,7 @@ const dsQuestions = [
   },
   {
     text: "What is the main characteristic of a circular linked list?",
-    options: [
+    option: [
       { text: "The last node points to the first node", isCorrect: true },
       { text: "It uses two pointers", isCorrect: false },
       { text: "It allows backward traversal", isCorrect: false },
@@ -226,7 +226,7 @@ const dsQuestions = [
   },
   {
     text: "Which algorithm is used to find the shortest path in a weighted graph?",
-    options: [
+    option: [
       { text: "Dijkstra's Algorithm", isCorrect: true },
       { text: "Depth First Search", isCorrect: false },
       { text: "Prim's Algorithm", isCorrect: false },
@@ -235,7 +235,7 @@ const dsQuestions = [
   },
   {
     text: "Which of the following operations takes O(1) time in a stack?",
-    options: [
+    option: [
       { text: "Push", isCorrect: true },
       { text: "Traversal", isCorrect: false },
       { text: "Search", isCorrect: false },
@@ -244,7 +244,7 @@ const dsQuestions = [
   },
   {
     text: "Which data structure supports breadth-first traversal?",
-    options: [
+    option: [
       { text: "Queue", isCorrect: true },
       { text: "Stack", isCorrect: false },
       { text: "Heap", isCorrect: false },
@@ -253,7 +253,7 @@ const dsQuestions = [
   },
   {
     text: "In which data structure is insertion performed only at one end and deletion at the other?",
-    options: [
+    option: [
       { text: "Queue", isCorrect: true },
       { text: "Stack", isCorrect: false },
       { text: "Array", isCorrect: false },
@@ -262,7 +262,7 @@ const dsQuestions = [
   },
   {
     text: "Which data structure is used to detect cycles in a graph?",
-    options: [
+    option: [
       { text: "Depth First Search", isCorrect: true },
       { text: "Breadth First Search", isCorrect: false },
       { text: "Dijkstra's Algorithm", isCorrect: false },
@@ -271,7 +271,7 @@ const dsQuestions = [
   },
   {
     text: "Which data structure stores elements in a hierarchical manner?",
-    options: [
+    option: [
       { text: "Tree", isCorrect: true },
       { text: "Queue", isCorrect: false },
       { text: "Stack", isCorrect: false },
@@ -280,7 +280,7 @@ const dsQuestions = [
   },
   {
     text: "What is the primary advantage of a doubly linked list?",
-    options: [
+    option: [
       { text: "Efficient backward traversal", isCorrect: true },
       { text: "Constant time insertion", isCorrect: false },
       { text: "Less memory usage", isCorrect: false },
@@ -289,7 +289,7 @@ const dsQuestions = [
   },
   {
     text: "Which data structure provides the best performance for priority queues?",
-    options: [
+    option: [
       { text: "Heap", isCorrect: true },
       { text: "Stack", isCorrect: false },
       { text: "Queue", isCorrect: false },
@@ -298,7 +298,7 @@ const dsQuestions = [
   },
   {
     text: "In a hash table, what happens when two keys hash to the same value?",
-    options: [
+    option: [
       { text: "A collision occurs", isCorrect: true },
       { text: "The table resizes", isCorrect: false },
       { text: "The key is rejected", isCorrect: false },
@@ -307,7 +307,7 @@ const dsQuestions = [
   },
   {
     text: "Which type of graph does not have cycles?",
-    options: [
+    option: [
       { text: "Acyclic Graph", isCorrect: true },
       { text: "Cyclic Graph", isCorrect: false },
       { text: "Connected Graph", isCorrect: false },
@@ -316,7 +316,7 @@ const dsQuestions = [
   },
   {
     text: "What is the time complexity of searching in a sorted array using binary search?",
-    options: [
+    option: [
       { text: "O(log n)", isCorrect: true },
       { text: "O(n)", isCorrect: false },
       { text: "O(1)", isCorrect: false },
@@ -325,7 +325,7 @@ const dsQuestions = [
   },
   {
     text: "Which of the following is an application of a stack?",
-    options: [
+    option: [
       { text: "Function call management", isCorrect: true },
       { text: "Job scheduling", isCorrect: false },
       { text: "Breadth-first search", isCorrect: false },
@@ -334,7 +334,7 @@ const dsQuestions = [
   },
   {
     text: "Which data structure uses a hash function for indexing?",
-    options: [
+    option: [
       { text: "Hash Table", isCorrect: true },
       { text: "Heap", isCorrect: false },
       { text: "Queue", isCorrect: false },
@@ -343,7 +343,7 @@ const dsQuestions = [
   },
   {
     text: "Which operation in a linked list takes O(n) time in the worst case?",
-    options: [
+    option: [
       { text: "Search", isCorrect: true },
       { text: "Insertion at head", isCorrect: false },
       { text: "Traversal", isCorrect: false },

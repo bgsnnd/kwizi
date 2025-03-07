@@ -24,16 +24,16 @@ export const GlobalContextProvider = ({children}) => {
 
     const registerUser = async () => {
         try {
-            await axios.post("api/user/register");
-            console.log("User registered successfully!");
+            await axios.post("/api/user/register");
+            console.log("User registered successfully !")
         } catch (error) {
             console.error("Error registering user:", error);
         }
     }
 
-    if (user?.emailAddresses[0]?.emailAddress){
-        registerUser();
-    }
+    // if (user?.emailAddresses[0]?.emailAddress){
+    //     registerUser();
+    // }
 
    },[user, isLoaded]);
 

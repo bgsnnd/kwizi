@@ -11,7 +11,7 @@ export async function POST(req: NextRequest){
         //check if the user exit in the db
         let user = await prisma.user.findUnique({
             where : {clerkId:userId},
-        })
+        });
         //if do not exit, create new user
         if(!user){
             user= await prisma.user.create({
@@ -20,7 +20,7 @@ export async function POST(req: NextRequest){
                 }
             })
         }else{
-            console.log("User already exists");
+            console.log("User already exists")
         }
 
         return NextResponse.json(user);
