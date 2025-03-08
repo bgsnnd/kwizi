@@ -3,7 +3,7 @@ import React from 'react'
 interface Props{
     categoryData: ICategoryStats;
 }
-import { TrendingUp } from "lucide-react"
+
 import { Bar, BarChart, CartesianGrid, Rectangle, XAxis } from "recharts"
 import {
   Card,
