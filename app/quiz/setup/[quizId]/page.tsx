@@ -10,7 +10,7 @@ import { useRouter } from 'next/navigation'
 import React, { useEffect } from 'react'
 import toast from 'react-hot-toast'
 
-function page(){
+function Page(){
     const router = useRouter();
     const {quizSetup, setQuizSetup, selectedQuiz} = useGlobalContext();
     useEffect(()=> {
@@ -125,4 +125,4 @@ function page(){
     )
 }
 
-export default page
+export default Page
