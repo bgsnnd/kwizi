@@ -41,7 +41,7 @@ export async function POST(req: NextRequest) {
     if (stat) {
       // calculate the average score
       const completed = stat.completed || 0;
-      const totalScore = (stat.averageScore * completed) + score;
+      const totalScore = ((stat.averageScore ?? 0) * completed) + score;
       const newAverageScore = totalScore / (completed + 1);
 
       // update the categoryStat entry
