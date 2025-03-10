@@ -45,7 +45,7 @@ model Question{
   quizId        String    @db.ObjectId
   difficulty    String?
   quiz          Quiz?      @relation(fields: [quizId], references:[id], onDelete: Cascade)
-  option        Option[]
+  options        Option[]
 }
 
 model Option{

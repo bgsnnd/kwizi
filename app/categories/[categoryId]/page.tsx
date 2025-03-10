@@ -59,7 +59,7 @@ async function Page({ params }: any) {
           id: true,
           text: true,
           difficulty: true,
-          option: {
+          options: {
             select: {
               id: true,
               text: true,

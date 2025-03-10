@@ -9,11 +9,11 @@ import React from 'react'
 import { useEffect } from 'react';
 import toast from 'react-hot-toast';
 
-function page() {
+function Page() {
     const {selectedQuiz, quizSetup, setQuizSetup, setQuizResponses} = useGlobalContext();
     const router = useRouter();
     const [currentIndex, setCurrentIndex ] = React.useState(0);
-    const [activeQuestion, setActiveQuestion ] = React.useState(null) as any;
+    const [activeQuestion, setActiveQuestion] = React.useState<IOption | null>(null);
     const [responses, setResponses] = React.useState<IResponse[]>([]);
     const [shuffledOptions, setShuffledOptions] = React.useState<IOption[]>([]);
     const [shuffledQuestions, setShuffledQuestions] = React.useState<IQuestion[]>(
@@ -26,28 +26,56 @@ function page() {
     }
     //shuffle questions when the quiz is started
     useEffect(() => {
-      const filteredQuestions = selectedQuiz.questions.filter((q: {difficulty: string}) =>{
-        return ( !quizSetup?.difficulty || quizSetup?.difficulty === "unspecified" || quizSetup?.difficulty === q.difficulty
-        );
-      })
-      .slice(0, quizSetup?.questionCount)
-      .map((q: { option: any; }) => ({...q, options: q.option, // Mengubah nama "option" menjadi "options"
-      }));
+      // Jika selectedQuiz tidak ada, atur default kosong
+      if (!selectedQuiz?.questions?.length) {
+        console.warn("selectedQuiz atau pertanyaan tidak ditemukan!");
+        setShuffledQuestions([]); // ✅ Tetap update state agar urutan hook tidak berubah
+        return;
+      }
+    
+      const filteredQuestions = selectedQuiz.questions
+        .filter((q) => {
+          return (
+            !quizSetup?.difficulty ||
+            quizSetup?.difficulty === "unspecified" ||
+            quizSetup?.difficulty === q.difficulty
+          );
+        })
+        .slice(0, quizSetup?.questionCount)
+        .map((q) => ({
+          ...q,
+          options: q.options ?? [], // ✅ Pastikan `options` tidak undefined
+        }));
+    
       setShuffledQuestions(shuffleArray([...filteredQuestions]));
-    }, [selectedQuiz,quizSetup]);
+    }, [selectedQuiz, quizSetup]);
+    
+    
+    
+    
 
     //shuffle options when the active question changes
     useEffect(() => {
-      if (shuffledQuestions.length > 0 && Array.isArray(shuffledQuestions[currentIndex]?.options)) {
+      console.log("Current Question:", shuffledQuestions[currentIndex]?.text ?? "No question");
+      console.log("Options:", shuffledQuestions[currentIndex]?.options ?? "No options");
+    
+      if (shuffledQuestions.length === 0) {
+        setShuffledOptions([]); // ✅ Tetap update state agar tidak error
+        return;
+      }
+    
+      if (Array.isArray(shuffledQuestions[currentIndex]?.options)) {
         setShuffledOptions(shuffleArray([...shuffledQuestions[currentIndex].options]));
       } else {
-        setShuffledOptions([]); // Default ke array kosong agar tidak menyebabkan error
+        setShuffledOptions([]);
       }
     }, [shuffledQuestions, currentIndex]);
     
+    
+    
 
     //Fisher-Yates Shuffle Algorithm
-    const shuffleArray = (array: any[]) => {
+    const shuffleArray = <T,>(array: T[]): T[] => {
       for(let i = array.length -1; i > 0; --i) {
         //generate a random index between 0 and i
         const j = Math.floor(Math.random() * (i + 1));
@@ -57,7 +85,8 @@ function page() {
       return array;
     };
     
-    const handleActiveQuestion = (option: any) => {
+    const handleActiveQuestion = (option: IOption) => {
+
       if(!shuffledQuestions[currentIndex]) return
 
       const response = {
@@ -195,4 +224,4 @@ function page() {
   )
 }
 
-export default page
+export default Page
