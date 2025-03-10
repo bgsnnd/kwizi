@@ -79,7 +79,7 @@ async function Page({ params }: any) {
       <h1 className="mb-6 text-4xl font-bold">All Quizzes</h1>
       {quizzes.length > 0 ? (
         <div className="mb-8 grid [grid-template-columns:repeat(auto-fit,minmax(400px,1fr))] gap-6">
-          {quizzes.map((quiz) => (
+          {quizzes.map((quiz: IQuiz) => (
             <QuizCard key={quiz.id} quiz={quiz} />
           ))}
         </div>
