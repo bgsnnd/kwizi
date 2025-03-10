@@ -9,7 +9,7 @@ import React from 'react'
 import { useEffect } from 'react';
 import toast from 'react-hot-toast';
 
-function page() {
+function Page() {
     const {selectedQuiz, quizSetup, setQuizSetup, setQuizResponses} = useGlobalContext();
     const router = useRouter();
     const [currentIndex, setCurrentIndex ] = React.useState(0);
@@ -195,4 +195,4 @@ function page() {
   )
 }
 
-export default page
+export default Page
