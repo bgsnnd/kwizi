@@ -13,20 +13,22 @@ function Page() {
     const {selectedQuiz, quizSetup, setQuizSetup, setQuizResponses} = useGlobalContext();
     const router = useRouter();
     const [currentIndex, setCurrentIndex ] = React.useState(0);
-    const [activeQuestion, setActiveQuestion ] = React.useState(null) as any;
+    const [activeQuestion, setActiveQuestion] = React.useState<IOption | null>(null);
     const [responses, setResponses] = React.useState<IResponse[]>([]);
     const [shuffledOptions, setShuffledOptions] = React.useState<IOption[]>([]);
     const [shuffledQuestions, setShuffledQuestions] = React.useState<IQuestion[]>(
         []
     );
 
-    if(!selectedQuiz) {
-      router.push("/");
-      return null;
-    }
+    useEffect(() => {
+      if (!selectedQuiz) {
+        router.push("/");
+      }
+    }, [selectedQuiz, router]);
+    
     //shuffle questions when the quiz is started
     useEffect(() => {
-      const filteredQuestions = selectedQuiz.questions.filter((q: {difficulty: string}) =>{
+      const filteredQuestions = selectedQuiz.questions.filter((q: IQuestion) =>{
         return ( !quizSetup?.difficulty || quizSetup?.difficulty === "unspecified" || quizSetup?.difficulty === q.difficulty
         );
       })
