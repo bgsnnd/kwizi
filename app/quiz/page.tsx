@@ -33,8 +33,7 @@ function Page() {
         );
       })
       .slice(0, quizSetup?.questionCount)
-      .map((q: { option: any; }) => ({...q, options: q.option, // Mengubah nama "option" menjadi "options"
-      }));
+      .map((q: IQuestion) => ({ ...q, options: q.option }));
       setShuffledQuestions(shuffleArray([...filteredQuestions]));
     }, [selectedQuiz,quizSetup]);
 
@@ -49,7 +48,7 @@ function Page() {
     
 
     //Fisher-Yates Shuffle Algorithm
-    const shuffleArray = (array: any[]) => {
+    const shuffleArray = <T,>(array: T[]): T[] => {
       for(let i = array.length -1; i > 0; --i) {
         //generate a random index between 0 and i
         const j = Math.floor(Math.random() * (i + 1));
@@ -59,7 +58,7 @@ function Page() {
       return array;
     };
     
-    const handleActiveQuestion = (option: any) => {
+    const handleActiveQuestion = (option: IOption) => {
       if(!shuffledQuestions[currentIndex]) return
 
       const response = {

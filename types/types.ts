@@ -16,6 +16,7 @@ interface IQuiz{
 }
 
 interface IQuestion{
+    option: any;
     id: string;
     text: string;
     difficulty?: string|null;

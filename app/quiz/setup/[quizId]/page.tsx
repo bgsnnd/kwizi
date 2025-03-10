@@ -19,20 +19,26 @@ function Page(){
         }
     }, [selectedQuiz,router]);
 
-    const handleQuestionChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const value = parseInt(e.target.value,10);
+    interface QuizSetup {
+        questionCount: number;
+        category: string | null;
+        difficulty: string | null;
+      }
+
+      const handleQuestionChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const value = parseInt(e.target.value, 10);
         const maxQuestions = selectedQuiz?.questions.length || 1;
-
+      
         const newCount = isNaN(value) || value < 1 ? 1 : Math.min(value, maxQuestions);
+      
+        setQuizSetup((prev: QuizSetup) => ({ ...prev, questionCount: newCount }));
+      };
 
-        setQuizSetup((prev:{})=> ({...prev, questionCount: newCount }));
-    };
-
-    const handleDifficultyChange = (difficulty:string) => {
-        setQuizSetup((prev:{})=>({...prev, difficulty}));
-
+      const handleDifficultyChange = (difficulty: string) => {
+        setQuizSetup((prev: QuizSetup) => ({ ...prev, difficulty }));
+      
         console.log("Difficulty:", difficulty);
-    };
+      };
 
     const startQuiz = async () => {
         const selectedQuestions = selectedQuiz?.questions
