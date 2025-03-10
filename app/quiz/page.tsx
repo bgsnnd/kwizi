@@ -9,31 +9,30 @@ import React from 'react'
 import { useEffect } from 'react';
 import toast from 'react-hot-toast';
 
-function Page() {
+function page() {
     const {selectedQuiz, quizSetup, setQuizSetup, setQuizResponses} = useGlobalContext();
     const router = useRouter();
     const [currentIndex, setCurrentIndex ] = React.useState(0);
-    const [activeQuestion, setActiveQuestion] = React.useState<IOption | null>(null);
+    const [activeQuestion, setActiveQuestion ] = React.useState(null) as any;
     const [responses, setResponses] = React.useState<IResponse[]>([]);
     const [shuffledOptions, setShuffledOptions] = React.useState<IOption[]>([]);
     const [shuffledQuestions, setShuffledQuestions] = React.useState<IQuestion[]>(
         []
     );
 
-    useEffect(() => {
-      if (!selectedQuiz) {
-        router.push("/");
-      }
-    }, [selectedQuiz, router]);
-    
+    if(!selectedQuiz) {
+      router.push("/");
+      return null;
+    }
     //shuffle questions when the quiz is started
     useEffect(() => {
-      const filteredQuestions = selectedQuiz.questions.filter((q: IQuestion) =>{
+      const filteredQuestions = selectedQuiz.questions.filter((q: {difficulty: string}) =>{
         return ( !quizSetup?.difficulty || quizSetup?.difficulty === "unspecified" || quizSetup?.difficulty === q.difficulty
         );
       })
       .slice(0, quizSetup?.questionCount)
-      .map((q: IQuestion) => ({ ...q, options: q.option }));
+      .map((q: { option: any; }) => ({...q, options: q.option, // Mengubah nama "option" menjadi "options"
+      }));
       setShuffledQuestions(shuffleArray([...filteredQuestions]));
     }, [selectedQuiz,quizSetup]);
 
@@ -48,7 +47,7 @@ function Page() {
     
 
     //Fisher-Yates Shuffle Algorithm
-    const shuffleArray = <T,>(array: T[]): T[] => {
+    const shuffleArray = (array: any[]) => {
       for(let i = array.length -1; i > 0; --i) {
         //generate a random index between 0 and i
         const j = Math.floor(Math.random() * (i + 1));
@@ -58,7 +57,7 @@ function Page() {
       return array;
     };
     
-    const handleActiveQuestion = (option: IOption) => {
+    const handleActiveQuestion = (option: any) => {
       if(!shuffledQuestions[currentIndex]) return
 
       const response = {
@@ -196,4 +195,4 @@ function Page() {
   )
 }
 
-export default Page
+export default page
