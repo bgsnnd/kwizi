@@ -6,6 +6,10 @@ import { play } from "@/utils/Icons";
 import { useRouter } from "next/navigation";
 import React, { useEffect } from "react";
 
+interface QuizResponse {
+    isCorrect: boolean;
+}
+
 function Page() {
     const router = useRouter();
     const { quizResponses, selectedQuiz } = useGlobalContext();
@@ -14,17 +18,14 @@ function Page() {
         if (!quizResponses || quizResponses.length === 0) {
             router.push("/");
         }
-    }, [quizResponses]);
+    }, [quizResponses, router]); // Menambahkan `router` dalam dependencies
 
     if (!quizResponses || quizResponses.length === 0) {
         return <p className="text-center">Redirecting...</p>;
     }
 
     // Menghitung skor
-    const correctAnswer = quizResponses.filter(
-        (res: { isCorrect: boolean }) => res.isCorrect
-    ).length;
-
+    const correctAnswer = quizResponses.filter((res: QuizResponse) => res.isCorrect).length;
     const totalQuestions = quizResponses.length;
     const scorePercentage = (correctAnswer / totalQuestions) * 100;
 
@@ -56,7 +57,11 @@ function Page() {
             <div className="flex justify-center mt-8">
                 <Button
                     className="bg-green-500 hover:bg-green-600 px-10 py-6 font-bold text-white text-xl rounded-xl"
-                    onClick={() => router.push(`/quiz/setup/${selectedQuiz.id}`)}
+                    onClick={() => {
+                        if (selectedQuiz?.id) {
+                            router.push(`/quiz/setup/${selectedQuiz.id}`);
+                        }
+                    }}
                 >
                     {play} Play Again
                 </Button>

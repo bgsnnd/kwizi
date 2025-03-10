@@ -39,20 +39,20 @@ export async function POST(req: NextRequest) {
 
     if (stat) {
       // calculate the average score
-      const totalScore = (stat.averageScore || 0) * stat.completed + score;
-      const newAverageScore = totalScore / (stat.completed + 1);
+      const completed = stat.completed || 0;
+      const totalScore = (stat.averageScore * completed) + score;
+      const newAverageScore = totalScore / (completed + 1);
 
       // update the categoryStat entry
       stat = await prisma.categoryStat.update({
         where: { id: stat.id },
         data: {
-          completed: stat.completed + 1,
-          averageScore: newAverageScore,
+          completed: completed + 1,
+          averageScore: parseFloat(newAverageScore.toFixed(2)), // Hindari floating-point error
           lastAttempt: new Date(),
         },
       });
     } else {
-      // create a new categoryStat entry
       stat = await prisma.categoryStat.create({
         data: {
           userId: user.id,
